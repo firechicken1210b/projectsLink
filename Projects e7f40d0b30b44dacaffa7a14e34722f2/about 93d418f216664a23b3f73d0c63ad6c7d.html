@@ -1,0 +1,696 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>about</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="93d418f2-1666-4a23-b3f7-3d0c63ad6c7d" class="page sans"><header><h1 class="page-title">about</h1></header><div class="page-body"><p id="1d166b6c-5566-4b64-9a81-700c752a53b5" class="">
+</p><div id="c408a5c0-79e4-4fb4-bd3e-94427b198be4" class="column-list"><div id="e6297d87-4ebf-45a9-b7ce-ef70f89e8693" style="width:31.25%" class="column"><hr id="4798ee9c-1942-4b45-80f3-141e8f91da94"/><p id="df585556-c4b2-402c-bfcb-6b30cd890ebb" class="">
+</p><p id="65ef3e1b-a7ef-45e6-a0ac-59d194f260c8" class="">《Mark/<em>空隙與填補</em>》</p><p id="1a9a8ccc-1a1e-4560-a2c8-484a1e694738" class="">
+</p><hr id="82529314-9459-4f9a-8d70-9c6bbe5bcfc2"/><p id="944efb19-24ff-47b3-8016-244656e7a8a1" class="">
+</p><figure id="6bc14673-e88d-4ef2-b8dd-1e29694c9652" class="image"><a href="about%2093d418f216664a23b3f73d0c63ad6c7d/old-0.png"><img style="width:336px" src="about%2093d418f216664a23b3f73d0c63ad6c7d/old-0.png"/></a></figure></div><div id="258ca54a-d90d-42ce-9eba-08b968f8f93d" style="width:68.75%" class="column"><h3 id="0b6f3268-e8cb-42ee-ad16-b65c30627ff3" class="">I.為了讓想法在不同之間的載體穿梭，</h3><p id="07f3a983-3c34-4dde-b4bd-3e565333f227" class="">自我認識印在載體與載體上的影子作為橋的樑子，
+誰是那托夫？
+能扛著多少的貨物，
+當雙腳承受不了手上的重量，
+就只能丟掉一些，
+已經忘記出發的時候扛著多少，
+也不知道到達的時候剩下什麼。</p><p id="66b2c238-f534-49c5-bf1c-60e92db18ebe" class="">
+</p><h3 id="0ba833fa-653d-459e-a149-3c1f66c5a9bb" class="">II.表達的空隙如同直觀的文字或是意思遺失，</h3><p id="4a026ca7-c7c3-4726-a889-37714a8ad4eb" class="">像是粗暴的去轉換後的結果，
+因而無法知道意義的起點是從何而起，
+而不同載體之間也使傳達產生空隙，
+不同的載體在承載想法上抱有不同的預期，
+而傳達的解讀受到預期填補，
+需要的時候為空隙填補自己的想像，
+以自身的經歷，相信因果，會如此相似發生，
+這樣空隙的產生、空隙的填補，
+卻也同時讓人能在這樣的環境之中潛然認識自己，
+模糊填補的能力也使得我們在探討空隙失去方向時停止墜落。</p></div></div><p id="a718c0ed-ef41-4025-bd67-ddd2f3131ea8" class="">
+</p><p id="c9bf67f8-19ed-4837-bbc0-22f0f3314cff" class="">
+</p><hr id="c37cc758-16ee-4099-a93a-11a8d3dffb25"/><div id="9b0e4a74-bcf0-4770-9dc9-4e7d54dac502" class="column-list"><div id="878fa536-b823-42c6-8ccf-9776716a99e1" style="width:50%" class="column"><figure id="f595c6b4-b707-4cda-8722-acf0e29edf00" class="image"><a href="about%2093d418f216664a23b3f73d0c63ad6c7d/newTime_.png"><img style="width:240px" src="about%2093d418f216664a23b3f73d0c63ad6c7d/newTime_.png"/></a></figure></div><div id="4aa0dba5-8563-4b2d-9c5d-3e597a2410b3" style="width:50.000000000000014%" class="column"><figure id="56641f4d-c589-4dc8-9955-8e0f6e844c55" class="image"><a href="about%2093d418f216664a23b3f73d0c63ad6c7d/Untitled.png"><img style="width:336px" src="about%2093d418f216664a23b3f73d0c63ad6c7d/Untitled.png"/></a></figure></div></div><p id="f8f71f3b-f518-4e4c-9364-a124837d5c42" class="">photo: firechicken1210b
+<a href="https://www.youtube.com/watch?v=NECoR-VUqkg">video</a></p><h3 id="05811b53-c4cb-4a88-8c16-b83aa6687434" class="">概述</h3><hr id="675c823c-340a-450d-9a43-ec703d2a9d45"/><p id="6b555430-3569-4556-bc60-adb0f047835e" class="">category          font and grammar</p><p id="4959bbd3-2836-4e57-ad67-2a47549864e8" class="">date | place     2016 July @Taipei</p><p id="2d930b79-b5e3-46b3-a7b7-b54263a699ca" class=""><span style="border-bottom:0.05em solid">Mark</span> 是一組由虛構字體及虛構溝通方式組成的作品。</p><pre id="f2952d3f-7a16-4994-a2b2-054359f9c863" class="code"><code>當我在不同的角度回顧時它們呈現與以往不同的風貌，
+尤其是過去抽象的認知更轉變為一種全新的認識。</code></pre><p id="cf8dfcd9-87c6-4e79-8e28-b1c99ac17942" class="">
+</p><hr id="b0ae540c-1e97-46f9-b6af-886cf545e88e"/><p id="9d6a43a3-f44e-4b9d-9035-163f694c29c3" class=""><div class="indented"><p id="df54a8c0-8ec1-4740-a326-2dd5c2e2a361" class="">我之所以虛構字體及虛構溝通方式是以此想像口語和書寫對我而言的角色，我認為書寫在紀錄片刻時留下的空隙，與口語在對話時的描述不清有同樣的趣味，也許透過刻意安排的虛構溝通方式後，閱讀可以發散出其他更多的解釋。急於對自己的想法留下結論、想要完全的傳達自己所想的像是一種不夠成熟的思考方式，我們能夠觀察到的智慧徜徉在每個事件的不確定之中。不論何種個性，只有臣服於溝通必然有空隙，並試著更有智慧的與之相處，才能使我們更加和平。</p><p id="2b2a93b9-83a6-47aa-96a3-b8c16792a453" class="">
+</p></div></p><hr id="ce7707d2-f1ac-46ff-ae80-9a6b7406bfe8"/><p id="c7055024-12e3-40cb-830b-0f8b56d5d2a2" class="">形式之於傳達所代表的意義</p><p id="6cc5ae6a-ed91-42f3-b139-02b5f3ddb21d" class="">生活之中存在多種形式去傳達,日常生活中傳達難以以單一形式發生,</p><p id="ec4774e8-1a33-4cde-8ce1-cbd2c3114f6f" class="">自創文字書寫並非沒有目的或是單純模仿，而是想要以此討論想法和傳達對我而言。</p><p id="d4399e77-bcb7-4d30-b899-0ae54c05ecaa" class="">在單方面的傳達面前，書寫能夠跨越時間，口語隨著時間消散，但倆與空隙同處一室時，仍有同樣的相處方式：</p><p id="1cd88a11-0d88-47a2-ab74-c2631da84556" class="">像是不在意傳達的人想要發出的聲音：只聽從自己想要聽從的；</p><p id="cd55ef79-d80c-4b0d-864d-09ca041d5fe6" class="">像是不在意接收的人想要接收的聲音：只發出自己想要發出的。</p><p id="1b8f938c-fc02-439d-9546-154e6f3a73fe" class="">這讓我聯想到自由，是一個我們在浮動的規則邊緣中遊走的模糊地帶；我時常在揣測自由，那是我最不常提起及我認為對我而言最在意的東西。</p><p id="b80c6fff-d7ec-48c1-ab3a-ee342446c2ae" class="">過去一陣子，我認為傳達之間的空隙如同畫面之間的填補一樣–「縱使我們再努力呈現我們意識所趨,並沒有事情能夠完美重現」，這讓我很沮喪，我擔心我是不是曾經因而錯過美好的事，而一輩子可能只有這麼一次的機會，我甚至不知道我已經錯過了。這讓我覺得很孤單，會不會只剩我徘徊在被遺忘的一邊，是不是也有人感覺到這樣。</p><p id="6c39d09c-5732-4163-91e5-baee519bfe7f" class="">當我在創作符號時，有一部分是很希望能有一種傳達的方式可以避免這種事情的發生，也許只是因為我的膽小，所以我過分的擔心，傳達之間的空隙被我過度放大來自於它的恐懼，但它同時也是一件美好的事，是一個為了未來準備的方案，它為了去填滿未來可能發生的事而存在。</p><p id="c0e28472-dd6b-4b42-a854-3583f7c29f01" class="">隨著時間流逝，我所熟知的事物也隨之改變。</p><p id="aef05e5c-876e-4b13-adff-d82d99f9b7f1" class="">當我從不同的角度回顧這些事物時，它們呈現出不同的風貌，尤其是過去抽象的認知，現在則轉變為一種新的認識。</p><p id="ff3651b6-7fca-4de7-9af0-dad2b274f780" class="">我們對於「新」這個概念的相對認知也有了不同的解釋。即使事物本身毫無改變，我們自身的改變也會讓事物以全新的面貌呈現出來。</p><p id="09f94296-2e73-478a-85d1-e7d412d2ec5d" class="">縱使不斷的描述去填補，填補之間永遠存在空隙，空隙的存在、填補自我經歷的處理方式，讓我們可以對已經閱讀、或是已經經歷的事情，因為自我隨著時間的增減再被詮釋。美好的事情終有一天會成為難過，難過的事情終有一天會成為美好。</p><p id="4273f038-7129-45cb-977d-42ad9278b477" class="">空隙存在於我們之周，縱使我們面對一顆石頭，都會因為我們的不了解或是觀察不夠入微，讓我們的接收到的資訊與石頭的傳達之間產生空隙，但空隙的填補似乎都由我們過去的經驗負責，相較於尋找一個完美重現傳達的方法，也許我們可以明立的短期目標是消化我們的過去。</p><p id="4340994c-53b0-45c9-8407-eb6d431cd49d" class="">我認為–「在自由之中如果對自身的了解不夠便會支離破碎」是在思考的世界中行走的方式，從想法被傳達的轉換過程中也發現了類似的事情，自身的了解程度確實影響傳達重大，自身是一個載體，如果想要構成傳達，還需要對於下一個載體的認識。當傳達想法成為我們的目的時，想法在不同載體之間的轉換過程，跟想法的發生一樣重要。在將想法轉換成描述時，很多自己視為理所當然的想法會突然遺失，「該用哪一個詞去描述？」</p><p id="e1ac35ec-2b69-4bd2-9fc5-eba41ae49b18" class="">我認為空隙的發生率最高，通常是在這個描述發生的初期，推擠出這個想法的許多細節，自身的認識像是影子印在各種載體上，而在其他載體需要構成這份資訊時，待傳達的事情從不同的角度被理解，不同載體的存在因為不同背景，不同的載體因為不同的目的存在，因而發生空隙。</p><p id="d7a810da-5d27-457b-b48d-47828e11ee2f" class="">為了讓想法在不同之間的載體穿梭，自我認識印在載體與載體上的影子作為橋的樑子，誰是那托夫？能扛著多少的貨物，當雙腳承受不了手上的重量，就只能丟掉一些，已經忘記出發的時候扛著多少，也不知道到達的時候剩下什麼</p><p id="c9aafba7-b2db-41ca-9ca4-10d63554e24f" class="">傳達被剝落的過程像是被壓縮一樣，但卻是不由自主的剝落。如果我們不把最重要的事情放在核心，該如何避免在路途上就被忘記？我把在你回過頭的地方才該看到的事情放在容易剝落的地方，待你有一天不小心走來，還會有一件事情像是你熟悉的。少了一半的路程剝落，是不是真的有傳達到我想傳達的，是不是真的是你願意接受的？</p><p id="f7a7a478-804e-42f7-a336-711aae397afa" class="">傳達不是一個人的事情，沒有人能負擔整段路程。所以每一句話都容易在當下讓人孤單。壓縮傳達時預期能夠傳達想法發生的過程，因而無法知道意義的起點是從何而起。不同的載體在承載想法上抱有不同的預期，而傳達的解讀來自自我經歷的填補，在試圖重現想法的過程中，重現本身充滿空隙，而空隙反而也使得傳達充滿可能、不確定，人們會在需要的時候，以自身的經歷，為空隙填補自己的想像。</p><p id="5f9300f4-950c-43a7-a38c-46a97861a0dd" class="">我們想要觀察到的智慧，它跨越時間，徜徉在每個事件的不確定之中，而個性則決定我們接受「不確定之於明確描述」的比例，也許因此看來智慧並非適合於所有個性。而智慧的反面：也因此認為前因後果是會如此一再發生，而再以接受凡有定理必有意外的心態去重現它人的想法，卻也同時讓人能在這樣的環境之中潛然認識自己，模糊填補的能力也使得我們在探討空隙失去方向時停止墜落。</p><p id="af8a1516-b559-44d3-a5d9-bfd605b74952" class="">
+</p></div></article></body></html>
