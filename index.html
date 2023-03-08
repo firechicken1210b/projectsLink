@@ -1,0 +1,686 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Projects :</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="e7f40d0b-30b4-4dac-affa-7a14e34722f2" class="page sans"><header><h1 class="page-title">Projects<strong><strong> :</strong></strong></h1></header><div class="page-body"><p id="145377b7-b1cc-4fad-903b-dd9795ffb04a" class="">
+</p><p id="c18c3773-881f-41f5-b8f8-53add5bba28a" class="">
+</p><hr id="311f1f43-1e6e-4160-a2d9-35cbce34c155"/><div id="6a4585e1-47b6-4bdb-841a-961797f6f41f" class="column-list"><div id="bbb6e810-6452-40cb-bbf1-1f931c9ae530" style="width:75%" class="column"><p id="49758c72-a4c0-4bb6-b655-333518d81c97" class="">《ffc331/<em>細心地摸過自己的臉，就會知道自己是誰</em>》</p><p id="faa30889-acf6-4e6e-bd36-ef1960b867b3" class="">
+</p></div><div id="d1bc72f2-95b7-4118-9a92-f5114fbd09ef" style="width:25%" class="column"><figure id="0c4bc595-a813-49fe-bd6f-9fa56308dbba" class="link-to-page"><a href="Projects%20e7f40d0b30b44dacaffa7a14e34722f2/about%200c4bc595a81349febd6f9fa56308dbba.html">about.</a></figure><p id="c3851120-8deb-4a77-bde2-86e4eabd1e4e" class="">
+</p></div></div><hr id="77f66ba5-08a3-4887-9deb-d28c35b0e67c"/><div id="7e4e995a-63cc-4e6e-9395-cc4df7485b81" class="column-list"><div id="c06a6d41-d9cf-49b1-b1a6-1c4fe2df6130" style="width:75%" class="column"><p id="26e063d0-2e1c-429d-aaaa-9735143e25c4" class="">《Are We just an angel from the pantry/<em>告別部分的我如同祝福</em>》</p><p id="a824c8db-4824-4258-91b4-b703229068e9" class="">
+</p></div><div id="2de10769-71d6-43c9-8163-7632985f8494" style="width:25%" class="column"><figure id="6975872d-55ca-46e7-aa60-56f0d34f3467" class="link-to-page"><a href="Projects%20e7f40d0b30b44dacaffa7a14e34722f2/about%206975872d55ca46e7aa6056f0d34f3467.html">about.</a></figure></div></div><hr id="80404acd-3068-4310-bd2d-94fdb6f8a347"/><div id="65173efe-6b97-4923-9b13-844bfef08830" class="column-list"><div id="de986b5d-43e7-4d75-8d2f-578d84630783" style="width:75%" class="column"><p id="f64440c1-ccd2-4cfc-9d17-cfa93b5d6d0f" class="">《How to be dead without losting your soul/<em>對你的認識沒有因為結束而停止</em>》</p><p id="f7b65af5-7d85-447a-92c8-32711f23f102" class="">
+</p></div><div id="4edc5190-8c0f-49a7-8bf4-f2759c4c245d" style="width:24.999999999999996%" class="column"><figure id="3f635877-32bf-4f46-b380-ee41a00e5cc0" class="link-to-page"><a href="Projects%20e7f40d0b30b44dacaffa7a14e34722f2/about%203f63587732bf4f46b380ee41a00e5cc0.html">about.</a></figure></div></div><hr id="379867ed-b5a5-40ad-9820-c27f17deb654"/><div id="48afde8e-e790-47cf-a7f3-292721ec41e5" class="column-list"><div id="039c01f2-3ac7-4e5b-916d-6f3d73a73092" style="width:75%" class="column"><p id="804a56e4-bdc4-41f3-a8b9-1f0aa6eba4eb" class="">《Dejavu/<em>去時來歷</em>》</p></div><div id="00ba471c-736a-4a6c-a814-931877c456aa" style="width:25%" class="column"><figure id="e7b29153-aa27-4d20-bfdf-5b4623d9ed33" class="link-to-page"><a href="Projects%20e7f40d0b30b44dacaffa7a14e34722f2/about%20e7b29153aa274d20bfdf5b4623d9ed33.html">about.</a></figure></div></div><p id="0f3606ab-5869-43d2-9648-7221bd7ea5cf" class="">
+</p><hr id="49030a16-a8da-4ee5-b79a-f4c3ceeb264e"/><div id="9258436d-15f3-4f9c-8350-bb7ac7656308" class="column-list"><div id="a986eab8-f8d2-4791-8da3-f19f87ac1684" style="width:75%" class="column"><p id="9484b680-784d-440d-bbc2-7834caaf1b8d" class="">《Gad in my passage/<em>回憶是沒有終點的</em>》</p></div><div id="4bf7e194-6ae9-47d4-ab26-652d2a093648" style="width:25%" class="column"><figure id="e09d5f40-2d69-490c-a0e4-aef2f69595e8" class="link-to-page"><a href="Projects%20e7f40d0b30b44dacaffa7a14e34722f2/about%20e09d5f402d69490ca0e4aef2f69595e8.html">about.</a></figure></div></div><p id="73940ae7-89f3-4eb4-a777-2f3cfb5e8b92" class="">
+</p><hr id="4708dca1-ef22-47c5-bf5b-a858cc1be3ea"/><div id="407b7147-a4b2-4b5f-b10b-72d2956418cd" class="column-list"><div id="5171b612-a6e3-46bf-88ec-a3c0d74d96e3" style="width:75%" class="column"><p id="20ee76b5-bcb4-4cd8-b2d6-c5d60e2af0cc" class="">《Past/<em>終將忘記</em>》</p><p id="5015b8fc-59e6-44aa-ab84-b53f10f97dcb" class="">
+</p></div><div id="5ef5eb9e-9764-4803-89e4-d1f9371a1a4d" style="width:25.000000000000007%" class="column"><figure id="62188716-c3ca-4f41-a434-34a4b12e7c3d" class="link-to-page"><a href="Projects%20e7f40d0b30b44dacaffa7a14e34722f2/about%2062188716c3ca4f41a43434a4b12e7c3d.html">about</a></figure></div></div><hr id="a76eba07-3b47-432d-9f43-9a607c042dd6"/><div id="584b44c7-3f7d-4715-a0a7-c586c4da62d3" class="column-list"><div id="20d3443c-9f78-40de-813a-9debac590384" style="width:75%" class="column"><p id="c30b919e-0888-45cc-b7ba-49f61ff1540d" class="">《Mark/<em>空隙與填補</em>》</p></div><div id="89c88b50-0baf-4313-92a0-c80f202c8f68" style="width:25%" class="column"><figure id="93d418f2-1666-4a23-b3f7-3d0c63ad6c7d" class="link-to-page"><a href="Projects%20e7f40d0b30b44dacaffa7a14e34722f2/about%2093d418f216664a23b3f73d0c63ad6c7d.html">about</a></figure></div></div><p id="bf8a1081-d187-4041-8173-89b79a68939d" class="">
+</p><hr id="59086fd5-7a29-44dc-9401-faaaf4a6953a"/><div id="8665ee52-f7bb-478d-ba7b-9953a9da9b07" class="column-list"><div id="b5cd36d9-1daf-4491-91d8-5dee8cc4145f" style="width:75%" class="column"><p id="4846f8c2-1c4b-4fc9-a91f-9c30175cb2d8" class="">《CindyLast/<em>孤獨的夢蛋</em>》</p><p id="2710870f-b995-48c1-82ed-3fa1ff39cd37" class="">
+</p></div><div id="e7f579a1-8a61-4eb3-aa23-573122e897e5" style="width:24.999999999999996%" class="column"><figure id="38464b6d-d89e-419f-a99c-97416fafde02" class="link-to-page"><a href="Projects%20e7f40d0b30b44dacaffa7a14e34722f2/about%2038464b6dd89e419fa99c97416fafde02.html">about.</a></figure><p id="23f3421f-d700-4d04-9c55-38298053a5df" class="">
+</p></div></div><hr id="34e803f3-43c4-476d-8d29-b2ec8a7c9d1b"/><div id="e84ac629-9869-4acc-a049-60b45736e77c" class="column-list"><div id="e08a5407-7bcc-4ee1-8b7c-d788d636eef9" style="width:75%" class="column"><p id="6e7996ef-9d5c-4451-8f16-cc9aa1d44f25" class="">《Water/<em>像水一樣</em>》</p><p id="bf9b2a26-d311-4555-b01c-1c01925d87fa" class="">
+</p></div><div id="c3161b92-0544-4687-bb0c-f9ac0df2b434" style="width:24.999999999999993%" class="column"><figure id="c468fe67-33a4-457d-9a9e-f5e8dd4f95a5" class="link-to-page"><a href="Projects%20e7f40d0b30b44dacaffa7a14e34722f2/about%20c468fe6733a4457d9a9ef5e8dd4f95a5.html">about</a></figure></div></div><hr id="d0c15945-58a5-48e4-894f-11d12565a478"/><div id="3be153b2-e52c-4afb-9067-18f1a8023d0c" class="column-list"><div id="29c3d399-e505-4bcc-9364-f6968941aac3" style="width:75%" class="column"><p id="62d7c9b2-1f89-4335-9b2c-5e0ce5d927a0" class="">《Talk to my hand/<em>說得像手</em>》</p><p id="5bf090a4-6ef9-4edc-bac3-ebc083a80c72" class="">
+</p></div><div id="d2e0dcba-8365-4452-b935-0ad069e4ae9e" style="width:25%" class="column"><figure id="8a0170c7-527e-43a7-9e86-55522abbb1be" class="link-to-page"><a href="Projects%20e7f40d0b30b44dacaffa7a14e34722f2/about%208a0170c7527e43a79e8655522abbb1be.html">about.</a></figure></div></div><hr id="ce287ea8-2684-431e-8402-34c65020a88c"/><p id="af6ef13d-79f8-43cf-8a5b-730be98ac690" class="">
+</p><p id="e8c01f3d-be53-4dda-b51b-602e98cf691d" class="">
+</p><p id="ef789802-2055-4909-a013-f2dbad4b7f46" class="">
+</p><p id="4f02cf20-a199-48fa-9021-9d36b448f613" class=""><em><mark class="highlight-gray">© 2023 CHOUCHIAWEI (firechicken1210b火機). All rights reserved.</mark></em></p></div></article></body></html>

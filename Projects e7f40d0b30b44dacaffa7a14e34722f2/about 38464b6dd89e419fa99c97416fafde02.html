@@ -1,0 +1,706 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>about.</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="38464b6d-d89e-419f-a99c-97416fafde02" class="page sans"><header><h1 class="page-title">about.</h1></header><div class="page-body"><div id="fb661507-0397-4902-a6cd-e7274e2c646e" class="column-list"><div id="327a776c-f358-4b60-930f-e35d1ab5fd33" style="width:37.5%" class="column"><hr id="342e5d15-1bf2-45fb-b0da-7f3e9790dafe"/><p id="cb346f93-74d8-46ba-aa74-955bc3633e12" class="">
+</p><p id="577bf89d-0f61-49be-aa35-eaaa50e217d3" class="">《CindyLast/<em>孤獨的夢蛋</em>》</p><p id="6e3c9583-f9b9-4a50-9c63-a5347bca32e9" class="">
+</p><hr id="959c38b1-b690-40ed-978a-8f89e8cdba83"/><p id="b63e4009-a716-455f-a1b3-584f41a20091" class="">
+</p><figure id="b3d2cba2-221c-4ebb-bbea-cb3e1012b773" class="image"><a href="about%2038464b6dd89e419fa99c97416fafde02/TK_POST3.png"><img style="width:288px" src="about%2038464b6dd89e419fa99c97416fafde02/TK_POST3.png"/></a></figure><p id="bb345344-27e1-4b5f-9ef1-e4a327498b18" class="">
+</p><figure id="8e11bf16-f30a-46e8-acce-51711aba227e" class="image"><a href="about%2038464b6dd89e419fa99c97416fafde02/theDUST_rm23.png"><img style="width:288px" src="about%2038464b6dd89e419fa99c97416fafde02/theDUST_rm23.png"/></a></figure><p id="4f69d98f-1d85-4898-932f-89f8ee9d62ce" class="">
+</p></div><div id="53e2c8bf-e625-499e-9ce5-e89f63e9e099" style="width:62.5%" class="column"><h3 id="87938b93-8fd6-4dca-abd6-e66cd1c2b968" class="">I.辛蒂活很久</h3><p id="c5b10764-de4c-4b86-aa40-0c0854851213" class="">漫長的身體累積了疾病</p><p id="871be24f-57cb-4ff3-81d0-6d5d78cca99d" class="">疾病困擾著他</p><p id="047d30f4-ca43-485c-a217-293aab2f5399" class="">直到大家都漸行漸遠他仍獨自出現深怕有人有天回返卻獨自一人</p><p id="283e480e-2baa-49b2-b9c8-3c4b9e767ea0" class="">有的時候他會把所有線的頭尾都連起來避免有人找不到回家的路</p><p id="f763fc12-bb9e-46fa-8624-756e7062dc04" class="">對於在黑暗中迷路的人</p><p id="fc200e9c-f7bf-406e-8cc5-07267993c313" class="">你只要給他一點火光他就能把你當作燈塔</p><p id="2452f280-64e3-47dc-983b-fffdf8daff16" class="">有的時候他不打開收音機也能聽到收音機的聲音</p><p id="72fb3064-900e-484c-92c9-e2c545c7d33e" class="">像是</p><p id="42b9e7fa-d3ad-4edb-8e82-24024f1ef9ec" class="">最後的你</p><p id="253971fa-ede1-4915-a79b-13c8f61d7834" class="">最後的你</p><p id="50d572ff-1047-4636-9b4e-21c44915552e" class="">最後的你</p><p id="bb1e0dc9-6ca5-4fb9-827b-719fbe41be7f" class="">最後的你能不能不要讓任何事情沾染我的痕跡</p><p id="b217519c-917c-4d29-89be-7020776f941d" class="">讓我的成就歸屬於我自己的名字</p><p id="1135bee5-39d2-4874-aefb-c4fc60bad03b" class="">讓我的名字不在被提起</p><p id="60ede6b9-3fe8-4c77-b611-39f5efc92332" class="">有的時候堅持是不需要理由</p><p id="dcc1cea2-e5f9-4cb8-80bc-a3d7ffc41508" class="">就像他把從左邊牆上掉到桌子上的黃色便條紙背上貼上撿來的雙面膠</p><p id="46e7c5d6-af52-4f1c-9341-1dc56afa29b4" class="">而我們的靈魂是像路過又或將殞落的星暫時受到這個階段的引力</p><p id="eecdb996-2a67-4f34-a697-bbac2915df03" class="">而這經過的單位也遠大於用經歷來形容了</p><p id="48c45df9-84ce-45f7-bca4-c1c01f98e9b8" class="">所以才會有人說天上的星星都是我們</p><p id="0c4df17d-b854-4baa-93f2-cc848dda6417" class="">有的路上沒有人的時候</p><p id="874573ff-2918-46c7-bbf3-4a6e30a40be9" class="">到處都是靈魂</p><p id="649cbddc-c6a2-453a-bc94-66d6e7108b29" class="">你可以從他眼裡的反射看見壅擠的他們</p><p id="e89477db-1f5d-41cc-b2b7-26910d447692" class="">他不感覺到自己在行走前進他們推著他</p><p id="05d56f1b-a10e-4328-b5f0-3a1be9c8448d" class="">知道他的目的</p><p id="1993f6c4-77c8-49df-a87d-816e74fa488e" class="">他不想一個人死卻又在人邊的時候病痛</p><p id="357f1b8d-c66e-4923-8502-a5fc156fd4d7" class="">如果人們都是這樣在愛的大生大死之間來回</p><p id="8da7247f-fbfc-429a-9aef-9ebc91e9aeb8" class="">如果天氣特別好就試著畫一幅畫送他</p><p id="ac9d2f2b-97a3-4409-9dbb-5223aabbc7ba" class="">如果他死了就跟他聊聊什麼是愛</p><p id="548f3b20-9bbb-47ef-9df8-09bb6244aa58" class="">有的時候人死了就像代表著有很多飲料可以喝</p><p id="5848663d-8173-4610-a98b-84999b8317fe" class="">活著的時候</p><p id="75d081d3-5dbe-4f47-b313-dc776f422e49" class="">我們都是表演者也都是觀眾看著自己和別人對抗著世界然後將焦點放在精彩的人身上</p><p id="34c571b6-c60d-4ace-a76e-99f8762086d4" class="">但給人家看只有自己看得懂的東西又不解釋很不尊重人</p><p id="839f46d9-7d1d-4918-b41d-9c32a0587d2a" class="">有人射向他</p><p id="48e47351-76a9-4334-bd2b-5fe0ba0714f8" class="">他只能試著習慣和保持謙卑和不曾試著操弄</p><p id="a5f0b139-cfcb-4d8e-9ac9-a6548e85dec6" class="">夢裡的人和他約好了明天要去遛狗</p><p id="2bbfbd9b-65aa-4d8e-8dcf-0a40ca826ade" class="">
+</p><h3 id="1868b2c7-4c7c-4004-baef-147b7a74df06" class="">II.雞</h3><p id="014b1db3-b5c8-4863-8990-4ec236eb0a34" class="">下了一顆夢蛋,但
+夢裡沒有故事和傳說
+蛋在夢裡能不能認識
+他開始大哭
+表現的就像一個不能接受挫折的空地
+你問他怎麼惹
+他說他想到一個很難過的事
+你可以告訴我嗎
+他不能
+他不知道你是誰
+你知道你會再來一次
+我想告訴誰
+但我知道沒人在意
+這些人不是為我而來
+後來我才知道那是晚上
+我們就再也見不到了
+應該發生也許就也無關好壞了
+甚麼算應該
+我們有辦法幻想應該的事嗎
+那很殘忍
+你不是你
+他不是他
+而且看到臍帶者就會難過
+所以我們需要相處
+我沒辦法用一張圖告訴你全部她是孤獨的
+所以一定會想你</p><p id="cec7335c-bbe2-4f03-b60f-721367c52d2d" class="">
+</p></div></div><hr id="9700b6b3-cd9b-44ca-ac1b-fee175e52590"/><div id="27ec1949-9425-49b5-8961-adcbd22b84ee" class="column-list"><div id="f411e7be-5636-4e2f-8138-a03dd53c4391" style="width:33.333333333333336%" class="column"><figure id="e11148e5-ec27-4ab2-974b-850cec6c9bc6" class="image"><a href="about%2038464b6dd89e419fa99c97416fafde02/img01.jpg"><img style="width:336px" src="about%2038464b6dd89e419fa99c97416fafde02/img01.jpg"/></a></figure></div><div id="d89a4b91-82cf-4bda-8cae-f7034cb0939a" style="width:33.333333333333336%" class="column"><figure id="1ce5b71b-ae5a-4e0a-b6c5-414b226b5d41" class="image"><a href="about%2038464b6dd89e419fa99c97416fafde02/img00.jpg"><img style="width:336px" src="about%2038464b6dd89e419fa99c97416fafde02/img00.jpg"/></a></figure></div><div id="d8e7f720-e7ed-4fe4-8c78-856ae52475a2" style="width:33.33333333333333%" class="column"><figure id="82f44052-b8fe-4319-8441-526bf726bc39" class="image"><a href="about%2038464b6dd89e419fa99c97416fafde02/img02.jpg"><img style="width:336px" src="about%2038464b6dd89e419fa99c97416fafde02/img02.jpg"/></a><figcaption>photo: Danist Wen
+<a href="https://youtu.be/_63SeaP2i2E">video</a></figcaption></figure></div></div><h3 id="22812d3c-bd20-4044-9c08-d59d71b12626" class="">概述</h3><hr id="a82b5a90-16c1-4e72-9596-ddecc3a36b12"/><p id="21300397-9f2b-4732-bafc-1871928119b3" class="">category          AudioVisual performance</p><p id="aa95aa9b-1b19-467a-8124-8022e0119ecf" class="">date | place     2015 July @Taipei</p><p id="0a671ec0-2dcf-426f-977b-8fbe43d7d9ce" class=""><span style="border-bottom:0.05em solid">CindyLast</span> 是一個聲音影像的現場表演，由程式(Processing)串聯聲音與影像互動，發表於 theDust2015，一個包含行為藝術、浮空投影、即時運算的聯合演出。</p><pre id="6de0ec81-63e0-4982-aa41-d795936a644a" class="code"><code>同一段時間擁有兩個人生
+一個生命結束了另一個還得繼續</code></pre><p id="2c8f7082-9901-46dc-82e5-3c2935971e17" class="">
+</p><p id="f94c8fdb-1431-45ac-95dc-97d566f7ad55" class="">
+</p><hr id="e6a48686-99a0-44b2-9950-321e37e2aedb"/><p id="bbf0701f-ddfc-4e80-b006-9d522798fc21" class=""><div class="indented"><p id="1a058998-6b8d-467e-9a02-54224a714d40" class="">表演發想於2014年「我是」系列的其中一則故事，以此為起點去編排音樂及討論現場表演。</p></div></p><p id="9d2213ee-fb8b-4664-b33b-928c058e6f1b" class="">
+</p><hr id="25a4e4e3-e15a-4f47-81c0-0dbf4a4216e5"/></div></article></body></html>
